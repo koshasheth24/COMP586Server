@@ -27,6 +27,12 @@ public class MainController{
 		List<Recipe> recipeList=repository.getRecipeList();	
 		return recipeList;
 	 }
+	
+	@RequestMapping(method = RequestMethod.POST,value="/saveRecipe",headers = "Accept=application/json")
+	 public void saveRecipe(@RequestBody Recipe recipe) {
+		repository.saveRecipe(recipe);	
+		
+	 }
 	 
 	 
 	
