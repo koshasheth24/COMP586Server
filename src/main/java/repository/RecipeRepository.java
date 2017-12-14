@@ -28,4 +28,19 @@ public class RecipeRepository{
 		} 
 		return recipeList;	
 	}
+	
+	public void saveRecipe(Recipe recipe){
+		
+		try {
+			Session session= null;
+			session = sessionFactory.openSession();
+			session.beginTransaction();					
+			session.save(recipe);
+			session.getTransaction().commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+			
+	}
 }
