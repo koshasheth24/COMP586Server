@@ -22,17 +22,13 @@ public class MainController{
 	 @Autowired RecipeRepository repository;
 
 	 
-	 @RequestMapping(method = RequestMethod.GET,value="/api")
+	 @RequestMapping(method = RequestMethod.GET,value="/recipe")
 	 public List<Recipe> greet() {
 		List<Recipe> recipeList=repository.getRecipeList();	
 		return recipeList;
 	 }
 	 
-	 /*@RequestMapping(method = RequestMethod.GET,value="/review/{moviename}")
-	 public List<MovieReviews> getReviews(@PathVariable String moviename) {
-		List<MovieReviews> movieReviewList=repository.getUserReviewsForMovie(moviename);	
-		return movieReviewList;
-	 }*/
+	 
 	
 	 
 }
